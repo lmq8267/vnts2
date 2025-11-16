@@ -6,6 +6,10 @@ on:
 env:
   CARGO_TERM_COLOR: always
   TZ: Asia/Shanghai
+
+permissions:
+  contents: write
+  actions: write
   
 jobs:
  build:
@@ -109,28 +113,28 @@ jobs:
             sudo timedatectl set-timezone "Asia/Shanghai"
             cat >>~/.cargo/config <<EOF
             [target.x86_64-unknown-linux-musl]
-            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols"]
+            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols", "--remap-path-prefix=/=."]
             [target.aarch64-unknown-linux-musl]
             linker = "aarch64-linux-musl-gcc"
-            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols"]
+            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols", "--remap-path-prefix=/=."]
             [target.armv7-unknown-linux-musleabihf]
             linker = "armv7l-linux-musleabihf-gcc"
-            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols"]
+            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols", "--remap-path-prefix=/=."]
             [target.armv7-unknown-linux-musleabi]
             linker = "armv7m-linux-musleabi-gcc"
-            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols"]
+            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols", "--remap-path-prefix=/=."]
             [target.arm-unknown-linux-musleabihf]
             linker = "arm-linux-musleabihf-gcc"
-            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols"]
+            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols", "--remap-path-prefix=/=."]
             [target.arm-unknown-linux-musleabi]
             linker = "arm-linux-musleabi-gcc"
-            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols"]
+            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols", "--remap-path-prefix=/=."]
             [target.mipsel-unknown-linux-musl]
             linker = "mipsel-linux-musl-gcc"
-            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols"]
+            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols", "--remap-path-prefix=/=."]
             [target.mips-unknown-linux-musl]
             linker = "mips-linux-musl-gcc"
-            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols"]  
+            rustflags = ["-C", "target-feature=+crt-static","-C", "strip=symbols", "--remap-path-prefix=/=."]  
             EOF
             
       - name: 添加编译平台
@@ -138,7 +142,9 @@ jobs:
         
       - name: 开始编译
         if: ${{ matrix.TARGET != 'x86_64-unknown-freebsd' }}
-        run: cargo build --release --target $TARGET --features $FEATURES
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          cargo build --release --target $TARGET --features $FEATURES
         
       - name: 编译FreeBSD
         if: ${{ matrix.TARGET == 'x86_64-unknown-freebsd' }}
@@ -158,10 +164,17 @@ jobs:
           
       - name: 打包压缩
         run: upx --lzma --best target/${TARGET}/release/vnts || true
+
+      - name: 上传产物
+        uses: actions/upload-artifact@v4
+        with:
+         name: vnts-${{ matrix.target }}
+         path: target/${TARGET}/release/vnts
+        
       - 
        name: 删除工作流
-       uses: GitRML/delete-workflow-runs@main
+       uses: Mattraks/delete-workflow-runs@main
        with:
-        token: ${{ secrets.c8 }}
-        retain_days: 2
-        keep_minimum_runs: 1
+        token: ${{ secrets.GITHUB_TOKEN }}
+        retain_days: 0
+        keep_minimum_runs: 0
