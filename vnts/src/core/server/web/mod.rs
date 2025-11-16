@@ -70,6 +70,26 @@ async fn group_info(
         HttpResponse::Ok().json(ResponseMessage::fail("no group found".into()))
     }
 }
+#[post("/api/check_group_password")]  
+async fn check_group_password(  
+    _req: HttpRequest,  
+    service: Data<VntsWebService>,  
+    data: web::Json<GroupPasswordReq>,  
+) -> HttpResponse {  
+    let result = service.check_group_password(data.0);  
+    HttpResponse::Ok().json(ResponseMessage::success(result))  
+}
+#[post("/api/verify_group_password")]  
+async fn verify_group_password(  
+    _req: HttpRequest,  
+    service: Data<VntsWebService>,  
+    data: web::Json<VerifyPasswordReq>,  
+) -> HttpResponse {  
+    match service.verify_group_password(data.0) {  
+        Ok(_) => HttpResponse::Ok().json(ResponseMessage::success("success")),  
+        Err(e) => HttpResponse::Ok().json(ResponseMessage::fail(e.to_string())),  
+    }  
+}
 
 pub async fn start(
     lst: net::TcpListener,
