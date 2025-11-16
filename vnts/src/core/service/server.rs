@@ -260,11 +260,7 @@ impl ServerPacketHandler {
                                             break;  
                                         }  
                                     }  
-                                }  
-                                println!(   
-                                    is_gateway,   
-                                    is_client_subnet_gateway  
-                                ); 
+                                } 
               
                                 if is_gateway || is_client_subnet_gateway {  
                                     icmp_packet.set_kind(Kind::EchoReply);  
