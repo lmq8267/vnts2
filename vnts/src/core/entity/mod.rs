@@ -34,6 +34,8 @@ pub struct NetworkInfo {
     pub epoch: u64,
     // 网段下的客户端列表 ip->ClientInfo
     pub clients: HashMap<u32, ClientInfo>,
+    // 组网密码
+    pub password: Option<String>, 
 }
 
 impl NetworkInfo {
