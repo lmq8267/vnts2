@@ -46,6 +46,20 @@ impl WireGuardGroup {
             return Ok(());
         }
         let config = self.handshake(&buf)?;
+        // 检查IP是否被其他客户端使用  
+        {  
+            let guard = network_info.read();  
+            if let Some(client_info) = guard.clients.get(&config.ip.into()) {  
+                // 检查是否被其他WireGuard客户端使用  
+                if client_info.wireguard.is_some() && client_info.address != addr {  
+                    Err(anyhow!("该IP已被其他WireGuard客户端使用"))?;  
+                }  
+                // 检查是否被普通客户端使用  
+                if client_info.wireguard.is_none() && client_info.online {  
+                    Err(anyhow!("该IP已被其他客户端使用"))?;  
+                }  
+            }  
+        }
         let network_info = self
             .cache
             .virtual_network
