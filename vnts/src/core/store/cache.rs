@@ -148,7 +148,7 @@ impl AppCache {
         }
     }
     // 加载WireGuard客户端配置  
-    pub fn load_wg_configs(&self, gateway: Ipv4Addr, netmask: Ipv4Addr) -> anyhow::Result<()> {  
+    pub async fn load_wg_configs(&self, gateway: Ipv4Addr, netmask: Ipv4Addr) -> anyhow::Result<()> {  
         let config_path = get_wg_dir().join("client_configs.json");  
         if !config_path.exists() {  
             log::info!("WireGuard配置文件不存在: {:?}", config_path);  
@@ -158,8 +158,8 @@ impl AppCache {
         let store: WireGuardConfigStore = serde_json::from_str(&content)?;  
       
         for config in store.configs {  
-            // 确保对应的网络信息存在  
-            if !self.virtual_network.contains_key(&config.group_id) {  
+            // 使用 get 方法检查是否存在,而不是 contains_key  
+            if self.virtual_network.get(&config.group_id).is_none() {  
                 let network = Ipv4Network::with_netmask(gateway, netmask)?;  
                 let network_info = Arc::new(RwLock::new(NetworkInfo::new(  
                     u32::from(network.network()),  
@@ -170,7 +170,7 @@ impl AppCache {
                     config.group_id.clone(),   
                     network_info,   
                     Duration::from_secs(7 * 24 * 3600)  
-                ).await;  
+                ).await;   
             }  
           
             // 将客户端信息添加到网络中  
@@ -200,7 +200,7 @@ impl AppCache {
       
         log::info!("成功加载 {} 个WireGuard配置从 {:?}", self.wg_group_map.len(), config_path);  
         Ok(())  
-    }   
+    }
       
     // 保存WireGuard客户端配置  
     pub fn save_wg_configs(&self) -> anyhow::Result<()> {  
