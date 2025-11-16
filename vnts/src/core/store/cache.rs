@@ -2,11 +2,19 @@ use dashmap::DashMap;
 use parking_lot::RwLock;
 use std::net::{Ipv4Addr, SocketAddr};
 use std::sync::Arc;
-use std::time::Duration;
+use std::time::Duration;  
+use std::path::PathBuf;  
+use std::fs;  
+use serde::{Serialize, Deserialize}; 
 
 use crate::cipher::Aes256GcmCipher;
 use crate::core::entity::{NetworkInfo, WireGuardConfig};
 use crate::core::store::expire_map::ExpireMap;
+  
+#[derive(Serialize, Deserialize)]  
+struct WireGuardConfigStore {  
+    configs: Vec<WireGuardConfig>,  
+} 
 
 #[derive(Clone)]
 pub struct AppCache {
@@ -107,6 +115,35 @@ impl AppCache {
             wg_group_map,
         }
     }
+    // 加载WireGuard配置  
+    pub fn load_wg_configs(&self, config_path: &PathBuf) -> anyhow::Result<()> {  
+        if !config_path.exists() {  
+            log::info!("WireGuard配置文件不存在: {:?}", config_path);  
+            return Ok(());  
+        }  
+        let content = fs::read_to_string(config_path)?;  
+        let store: WireGuardConfigStore = serde_json::from_str(&content)?;  
+          
+        for config in store.configs {  
+            self.wg_group_map.insert(config.public_key, config);  
+        }  
+        log::info!("成功加载 {} 个WireGuard配置", self.wg_group_map.len());  
+        Ok(())  
+    }  
+      
+    // 保存WireGuard配置  
+    pub fn save_wg_configs(&self, config_path: &PathBuf) -> anyhow::Result<()> {  
+        let configs: Vec<WireGuardConfig> = self.wg_group_map  
+            .iter()  
+            .map(|entry| entry.value().clone())  
+            .collect();  
+          
+        let store = WireGuardConfigStore { configs };  
+        let content = serde_json::to_string_pretty(&store)?;  
+        fs::write(config_path, content)?;  
+        log::info!("成功保存 {} 个WireGuard配置到 {:?}", configs.len(), config_path);  
+        Ok(())  
+    }  
 }
 
 impl AppCache {
