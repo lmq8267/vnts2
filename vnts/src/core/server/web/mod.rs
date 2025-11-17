@@ -65,7 +65,18 @@ async fn group_info(
         HttpResponse::Ok().json(ResponseMessage::fail("no group found".into()))
     }
 }
-
+#[post("/api/group_list")]  
+async fn group_list(  
+    _req: HttpRequest,  
+    service: Data<VntsWebService>,  
+) -> HttpResponse {  
+    if service.is_group_list_disabled() {  
+        HttpResponse::Ok().json(ResponseMessage::fail("group_list功能已禁用".into()))  
+    } else {  
+        let list = service.get_group_list();  
+        HttpResponse::Ok().json(ResponseMessage::success(list))  
+    }  
+}
 pub async fn start(
     lst: net::TcpListener,
     cache: AppCache,
@@ -103,6 +114,7 @@ pub async fn start(
             .service(private_key)
             .service(create_wg_config)
             .service(group_info)
+            .service(group_list)
             .service(ResourceFiles::new("/", generated))
     })
     .listen(lst)?
