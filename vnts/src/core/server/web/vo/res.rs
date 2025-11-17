@@ -3,6 +3,13 @@ use base64::engine::general_purpose;
 use base64::Engine;
 use serde::{Deserialize, Serialize};
 use std::net::{Ipv4Addr, SocketAddr};
+use crate::core::entity::{WireGuardConfig, RouteConfig}; 
+
+#[derive(Debug, Serialize, Deserialize)]  
+pub struct RouteConfigRes {  
+    pub vnt_cli_ip: Ipv4Addr,  
+    pub lan_network: String,  
+}
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct WGData {
@@ -24,6 +31,8 @@ pub struct WgConfig {
     pub ip: Ipv4Addr,
     pub prefix: u8,
     pub persistent_keepalive: u16,
+    // 路由配置  
+    pub routes: Vec<RouteConfigRes>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -60,6 +69,8 @@ pub struct WireGuardConfigRes {
     pub persistent_keepalive: u16,
     pub secret_key: String,
     pub public_key: String,
+    // 路由配置  
+    pub routes: Vec<RouteConfigRes>,
 }
 impl From<WireGuardConfig> for WireGuardConfigRes {
     fn from(value: WireGuardConfig) -> Self {
@@ -73,6 +84,10 @@ impl From<WireGuardConfig> for WireGuardConfigRes {
             persistent_keepalive: value.persistent_keepalive,
             secret_key: general_purpose::STANDARD.encode(&value.secret_key),
             public_key: general_purpose::STANDARD.encode(&value.public_key),
+            routes: value.routes.iter().map(|r| RouteConfigRes {  
+                vnt_cli_ip: r.vnt_cli_ip,  
+                lan_network: r.lan_network.clone(),  
+            }).collect(),
         }
     }
 }
