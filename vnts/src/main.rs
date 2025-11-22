@@ -72,6 +72,9 @@ pub struct StartArgs {
     /// 禁用web界面显示所有组网token列表，启用后必须手动搜索才能查看  
     #[arg(long, default_value_t = false)]  
     disable_group_list: bool,
+    /// 禁用为客户端提供中继转发数据，仅交换客户端握手数据（客户端之间只能通过P2P进行连接，无法P2P时将无法通讯）
+    #[arg(long)]  
+    disable_relay: bool, 
 }
 
 #[derive(Clone)]
@@ -329,6 +332,7 @@ async fn main() {
         wg_public_key,
         #[cfg(feature = "web")]  
         disable_group_list: args.disable_group_list,
+        disable_relay: args.disable_relay,
     };
     let rsa = match RsaCipher::new(root_path) {
         Ok(rsa) => {
