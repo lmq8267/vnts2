@@ -2,9 +2,9 @@ FROM alpine:latest
 ARG TARGETARCH
 ARG TARGETVARIANT
 
-ADD vnts_$TARGETARCH$TARGETVARIANT /usr/sbin/vnts
+ADD vnts2_$TARGETARCH$TARGETVARIANT /usr/sbin/vnts2
 
-RUN chmod +x /usr/sbin/vnts
+RUN chmod +x /usr/sbin/vnts2
 
 RUN apk add --no-cache tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
@@ -23,4 +23,4 @@ VOLUME /app
 
 STOPSIGNAL SIGINT
 
-ENTRYPOINT ["/usr/sbin/vnts"]
+ENTRYPOINT ["/usr/sbin/vnts2"]
