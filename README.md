@@ -1,5 +1,7 @@
 # VNTS2
 
+**vnts2** 配置文件在线生成：[https://lmq8267.github.io/vnts2](https://lmq8267.github.io/vnts2/)
+
 ### DOcker部署命令示例：
 
 其中`/你的宿主机文件目录`是对应你宿主机的目录，并且需要在这个目录里面新建一个配置文件`config.toml`,配置文件参考下方的[配置文件示例](./README.md#配置文件示例)
