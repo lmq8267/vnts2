@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAJ8ElEQVRYw+2YfZBeVX3HP79z7r3Ps7vPbnazm2ZjEoxJrFgGEBCJDQKCNFUTYUahLVWLoyUwpVh0DNZO0XGQwQoMUFEQOgqlHcD6MjUYCZgXIECCCQgJiXmRvOxusrvZt2ef5z7Pveee8+sfa1peErCdUWecfmfuP/fO3O/n/s7ve85vLvy/Xl/y2zRb1T8m31q3a1YttwuaMN2IUlKG3trT8vPbl52Q/laA3v+vz3QfTmVZ4f0HM5e/p3DFTLEGo4IIiAZsFFVbTbjh/ErjhtcAnfbpb86ZTOVP3jRNH1x34xW1o5lsralcuuIbs6sSnVFIvMAH32mNKQQ/EPv8+Z7IbXYnLn5nIw9Xu6xYFnyWyJGvF0GAYCDS/1koj2AO7Pho9GqzwZH8nkajcW7m2o4HVrz82Qc+c3Np+7D7+HsvvX55mvtT29vLctzsHjrb28ldQd/QOAOjkxxyWb3c/FlbZfZbiFrbMBg0BPLqWK7e77FIzbSWF/q2SpdRBRTE4ur1y18DpD5/0ufpGRTRppffX/iXXzlr4+7Ru43Yt1609F1cuOQ0OubO5BDggBLQC0T1lLWPv9D27QfXsffxh+k47i3Eib2num/Pv/WWiw3bf/jPKcDJy29sD3/4jucKr/MBiCzN0aH5R+2hPqdmTiwBYP+kyukXffaqmpObzjvvFHvZ1R/hcUlY3yioYUkstEdCp1XajNATPDOt5d1W2PTjJ7nx1v9Ai2zNjJbw4R0P3TH+cp+Tb173hGvmizGGol4l3fjw82/Y1D3nXfnZyVrzxsuu/SSVcxdx/0gTjYQIRUSwIpSs0FWGb5SEt9sIj3JX7tlJxOKRIf7usptI640NvW1y/osrb2sAnHP7mjcPV/0uH3xsopjJLY/BcP8t5vVg5i75mw80qpNf+9iX/prdJ57GHS9NktYdzUlHPS2oZ566CzQCLBDh7dbSABzC5UnEWCj4dls3X7p7BZGweGAiv/1z1/+LDKvKwOHaV/PcxSEI+egw6d7dvjWRO+2xYE69cHnHwaGJ1acuO6+9dso5rBtOMcGjIeBDoAhCCEoQRaxQWOUTiUVFCEAM/DxzPO0NB02ZZe9ayJrvrj7l2Re2bfnBweSUhjNfRAwIjD62kkT8XfvWfuc7x6xQ/1D9M7YUz5q39MM8umkQaeaE1OFST54GXKPAZZ7CFeRFwQFvuKJekAdPC7DbFXyvpkzWc3Y3A/vnv43Tzz8Daeu8Lc/lLuMDGmBy81oYP7x3ZmvyeTjGxnj2xctLz24fOnDSpR+bsT+dR/+sbmSGxcaCRAaNBIkNJhFsOSJps5zanbDDCQ1XUPaBiSBYrxivlNVSCQln1/tZefsqStO6IE5wfTuZfO6xrKOj/Zy+jQ88DRAdDWjX3olzs2Y6o/OE03ni7k1EPV3oZKCIBRMbiAwSG0IMeCX3gc2FIsagGqg6haA4r4gHEYgl55EHN2LjGA2eYmgf1S1rtb2tbfkRmGMCNbLm2dN6e9m/axiyFGk6ks4EfCBPHZJYiA0aG0KhSAG5m0pdCIFQBIJOwRoxhMRQPLQaHRyGUgk/dojxp/6TSrn12oEt37/n5d5HBQp5fmI84w84tG0Hpn4YxlOytAEli5YEE0dIYpFYKDJPyBVTjgBBNRAKUK8IgsSQrFqN39cHSYIfH2Zy00piG33tkgvf/5Vbt67iDYGKRjobEhp9+9HJURiewLSXkSQilC0kgRBbiAwaC75eEMrRVH8JkAe0EAxKx8/Wowf70TghTAxS2/wohHzrX338gmtu/fJV+mrv18R+xS0Pm6fXr14RTe/tzNMMVx3Cxl1I3IoPAXEBcj91FQFcQJ1Hs4JQd2i9gJGMpF6jfeNPYPAgagxhYpj6lrUIikUPbFh577eOVozXVOjenz5+vdponq9OYGw7mlXxfc8StXQRNWK0FKNJDNaiiYXEIvZXyUMIwVJxw8TPPoo6B3EJPzFIunMT5d6FmJDhxgcmj7XdvAJo3oe+8KlqLb3GRjHF2EHMzApSNNCxlwiD25HOOdCIISlBHCNxCaIYtRaJDFIq0TH6DLJ1PWrLaJRQjOwl799D0dqL7ZxNfuA5jMgv3xBo/gWfX1St1r4eCoe0tJKPHGLanBOYcE2McYS+jQgGSTr+G0ajEmIjiCxxK5ReXIMO7kXjEigUh3bjJ0bxlTfh1RJZT1obI2mJNx8LyAKcdPHfTxserT5aONcT8iatWr+hPjZ6ZtzRSciaaNFEiiY0RhHbAgEkz8BlIJ5y9hLRCz9Ex0emOiQ43MFf4tOUotJL8EoSRdhIaR7up72SXF0fHRg9GpABGDw8dl3WTOepy4hCdt8t/3jlF6LYPpUN7qPcPRNTNCE0kXQQPfgMOrKLIq9TiiZo6V8N2x4hZE2CekI6TnFoHyEIRUsPuBwpGpS6usiG9mNtsuHO227dfawKyfz3fXLh8KTbHgqNLNLsbQ8Ldq67b2Da7NOWNvL8R61z/4iiNkZeHQYsQSy20k1pWgd+7BAiBsSCBnxjAnWOYMuoiQjqMQjSUqHc2U1j31ZaW5IPThzY8uNjAZnq+ORVIW9G4puIZmt3rrtvAODTV3zqociaVc3+nSTt3UQtHZhSQlIuE+PQicOIiVAxU0msDUNRoDYCCUjIMFogxhB3zsAN7sFG0Q+++OVrVvE6kq53XPSSK/w8DR6DPn3J0vcsvvOfPhcA5h5/5qyxifoWOrp7SVrRZo2p89ggKOoahGwSVI9M8CAGVJCg+FIF0z0XRvZhinx357S2Rf3b14+8bcnlM+pNv2TerOkPPHH/V90rUqbevZnCI+rx6hbd/6NH1k4/aelTqHZXC//HVJJeQkAbKYoACnlKyFNEC4SAYqagfsWEtYSOGZhyGzq0B6N+b0clWdK/ff0IwGi1cWUtLa4ldwPAmlcASci34vVE8AhQ+HCWKxpnoVNnkR6ZUEIBrokWGQSgpQ0pV6YS6AOooNaipTYwFknH0bEBrDU/7ZzW/tH+HY8dOmLaEXOHJNLX0115ou/VS9Z9/Hs/kjt5kCgSRadmBQVUUZ+jvkBdjnc51sjzJjLrtAgX+xB6jU2mNkkbgcoUdF4nOE8Um19EcXTdn55z1r8/cO/NgV9TAjB93jsvamb5TUHtXLEWVZ2aWXIXRGR7Ukp+0t7W8t1PXPrnm274h7/Vc5f9Rbx1284znbdnh6AngOmBoGJkyKh5wca65oILzt94983X/dogrwACeN+HLole3LH35MyHOahoksRDXV2tv9j25KpxEdH/7Yt/b/R/+tmwYVxbhsYavU7izqCm1QuxqJHCqEKRRWrSSPzYcd3J4KKKZL9RoA3DLtk6xp81nC4QkU7QVoUYxARBDZELhlRhrBKz66QZPPDudil+RwX/PdR/Af0RKqpAqORdAAAAAElFTkSuQmCC" />
+<title>VNTS2 配置在线生成器</title>
+<style>
+/* ===== Reset & Theme Variables ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:            #eef1f8;
+  --surface:       #ffffff;
+  --surface2:      #f5f7fb;
+  --surface3:      #eef1f8;
+  --border:        #dde2ed;
+  --border-focus:  #4a80f0;
+  --text:          #1c2033;
+  --text-muted:    #6b7591;
+  --text-label:    #334155;
+  --accent:        #4a80f0;
+  --accent2:       #6366f1;
+  --accent-glow:   rgba(74,128,240,0.15);
+  --success:       #10b981;
+  --danger:        #ef4444;
+  --warn:          #f59e0b;
+  --tag-bg:        #dbeafe;
+  --tag-text:      #1d4ed8;
+  --opt-tag-bg:    #f0fdf4;
+  --opt-tag-text:  #15803d;
+  --mono:          'JetBrains Mono','Fira Code','Cascadia Code','Consolas',monospace;
+  --sans:          'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+  --r:             10px;
+  --r-sm:          6px;
+  --sh:            0 2px 10px rgba(0,0,0,0.07);
+  --sh-lg:         0 6px 28px rgba(0,0,0,0.11);
+  --hdr:           54px;
+  --left-w:        500px;
+  --ease:          cubic-bezier(.4,0,.2,1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #0d1017;
+    --surface:     #161b27;
+    --surface2:    #101420;
+    --surface3:    #0d1017;
+    --border:      #252d42;
+    --text:        #dde3f5;
+    --text-muted:  #7882a4;
+    --text-label:  #b8c2de;
+    --tag-bg:      #1e2f5c;
+    --tag-text:    #93b4ff;
+    --opt-tag-bg:  #0f2b1e;
+    --opt-tag-text:#4ade80;
+    --sh:          0 2px 10px rgba(0,0,0,0.35);
+    --sh-lg:       0 6px 28px rgba(0,0,0,0.5);
+    --accent-glow: rgba(74,128,240,0.2);
+  }
+}
+
+html { font-size: 14px; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ===== Header ===== */
+.hdr {
+  position: sticky; top: 0; z-index: 200;
+  height: var(--hdr);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 16px;
+  box-shadow: var(--sh);
+}
+.hdr-logo {
+  display: flex; align-items: center; gap: 9px;
+  font-weight: 700; font-size: 1rem; color: var(--accent);
+  letter-spacing: -.3px;
+}
+.hdr-logo svg { width:30px;height:30px;flex-shrink:0; }
+.ver-badge {
+  font-size:.63rem; background:var(--accent); color:#fff;
+  padding:2px 6px; border-radius:99px; font-weight:700;
+}
+.hdr-sep { flex:1; }
+.theme-dot {
+  font-size:.72rem; color:var(--text-muted); letter-spacing:.2px;
+  display:none;
+}
+@media(min-width:600px){.theme-dot{display:block;}}
+
+/* ===== Layout ===== */
+.layout {
+  display: flex;
+  height: calc(100vh - var(--hdr));
+}
+
+/* LEFT: Form */
+.pane-left {
+  width: var(--left-w);
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding: 14px 14px 24px;
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+}
+
+/* RIGHT: Editor */
+.pane-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--surface2);
+}
+
+/* Mobile */
+@media(max-width:860px){
+  .layout { flex-direction: column; height: auto; }
+  .pane-left { width:100%; max-width:100%; border-right:none; border-bottom:1px solid var(--border); overflow:visible; }
+  .pane-right { min-height: 420px; flex:1 0 420px; }
+}
+
+/* ===== Section Cards ===== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: var(--sh);
+  transition: box-shadow .2s var(--ease);
+}
+.card:hover { box-shadow: 0 4px 20px rgba(74,128,240,0.1); }
+
+.card-hdr {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px;
+  cursor: pointer; user-select: none;
+  background: linear-gradient(90deg, var(--surface) 60%, var(--surface2));
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.card-hdr:hover { background: var(--surface2); }
+.card-icon { font-size:.95rem; }
+.card-title { font-weight:600; font-size:.82rem; color:var(--text-label); flex:1; }
+.caret {
+  font-size:.7rem; color:var(--text-muted);
+  transition: transform .2s var(--ease);
+  transform: rotate(0deg);
+}
+.card.closed .caret { transform: rotate(-90deg); }
+.card-body {
+  padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 10px;
+  animation: slideIn .18s var(--ease);
+}
+.card.closed .card-body { display: none; }
+
+/* ===== Fields ===== */
+.field { display:flex; flex-direction:column; gap:3px; }
+.fl { display:flex; align-items:center; gap:5px; font-size:.76rem; font-weight:600; color:var(--text-label); }
+.req { color:var(--danger); font-size:.7rem; }
+.hint { font-size:.69rem; color:var(--text-muted); line-height:1.45; }
+.tip {
+  font-size:.7rem; background:var(--surface2);
+  padding:6px 9px; border-radius:var(--r-sm);
+  border:1px solid var(--border); color:var(--text-muted); line-height:1.45;
+}
+
+.row2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+@media(max-width:400px){ .row2 { grid-template-columns:1fr; } }
+
+input[type=text], input[type=number], input[type=password], select {
+  width:100%; padding:7px 10px;
+  background:var(--surface2); border:1.5px solid var(--border);
+  border-radius:var(--r-sm); color:var(--text);
+  font-size:.8rem; font-family:inherit;
+  outline:none; appearance:none; -webkit-appearance:none;
+  transition: border-color .18s var(--ease), box-shadow .18s var(--ease), background .18s;
+  touch-action: manipulation;
+}
+input:focus, select:focus {
+  border-color:var(--border-focus); background:var(--surface);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+select {
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%236b7591' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 9px center; padding-right:28px;
+}
+
+/* Toggle */
+.tog-row { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.tog-info { flex:1; }
+.tog-info .tit { font-size:.8rem; color:var(--text-label); }
+.sw { position:relative; width:40px; height:22px; flex-shrink:0; }
+.sw input { opacity:0; width:0; height:0; }
+.track {
+  position:absolute; inset:0; background:var(--border);
+  border-radius:99px; cursor:pointer;
+  transition: background .18s var(--ease);
+}
+.track::after {
+  content:''; position:absolute; left:3px; top:3px;
+  width:16px; height:16px; background:#fff; border-radius:50%;
+  box-shadow:0 1px 4px rgba(0,0,0,.2);
+  transition: transform .18s var(--ease);
+}
+.sw input:checked + .track { background:var(--accent); }
+.sw input:checked + .track::after { transform:translateX(18px); }
+
+/* Tags */
+.tag { display:inline-flex; align-items:center; font-size:.62rem; font-weight:700; padding:1px 5px; border-radius:4px; }
+.tag.req-t { background:var(--tag-bg); color:var(--tag-text); }
+.tag.opt-t { background:var(--opt-tag-bg); color:var(--opt-tag-text); }
+
+/* Multi-list */
+.mlist { display:flex; flex-direction:column; gap:5px; }
+.mitem {
+  display:flex; gap:5px; align-items:center;
+  animation: fadeIn .16s var(--ease);
+}
+.mitem input { flex:1; }
+.mitem.net2 { display:grid; grid-template-columns:1fr 1.2fr auto; }
+
+.ibtn {
+  width:28px; height:28px; flex-shrink:0;
+  border:1.5px solid var(--border); border-radius:var(--r-sm);
+  background:var(--surface); color:var(--text-muted);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  font-size:.8rem; transition: all .15s var(--ease);
+  touch-action:manipulation; line-height:1;
+}
+.ibtn:hover { border-color:var(--accent); color:var(--accent); }
+.ibtn.del:hover { border-color:var(--danger); color:var(--danger); }
+
+.madd {
+  display:inline-flex; align-items:center; gap:5px;
+  font-size:.74rem; font-weight:600; color:var(--accent);
+  cursor:pointer; padding:3px 0;
+  background:none; border:none;
+  transition: color .15s; touch-action:manipulation;
+}
+.madd:hover { color:#2563eb; }
+
+.nbadge {
+  font-size:.6rem; background:var(--accent); color:#fff;
+  padding:1px 5px; border-radius:99px; margin-left:auto;
+}
+
+/* ===== RIGHT PANE ===== */
+.rbar {
+  display:flex; align-items:center; gap:8px;
+  padding:10px 14px;
+  background:var(--surface); border-bottom:1px solid var(--border);
+  flex-shrink:0;
+}
+.rtitle { font-size:.82rem; font-weight:600; color:var(--text-label); flex:1; }
+.rmode {
+  display:flex; gap:1px;
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--r-sm); padding:2px;
+}
+.rmode-btn {
+  padding:4px 10px; border-radius:4px; font-size:.72rem; font-weight:600;
+  cursor:pointer; border:none; background:transparent; color:var(--text-muted);
+  transition: all .15s; touch-action:manipulation;
+}
+.rmode-btn.active {
+  background:var(--accent); color:#fff;
+  box-shadow:0 1px 4px rgba(74,128,240,.3);
+}
+.ractions { display:flex; gap:5px; }
+.rbtn {
+  display:flex; align-items:center; gap:4px;
+  padding:5px 10px; border:1.5px solid var(--border); border-radius:var(--r-sm);
+  background:var(--surface); color:var(--text-label);
+  font-size:.73rem; font-weight:600; cursor:pointer; white-space:nowrap;
+  transition: all .15s; touch-action:manipulation;
+}
+.rbtn:hover { border-color:var(--accent); color:var(--accent); }
+.rbtn.pri { background:var(--accent); border-color:var(--accent); color:#fff; }
+.rbtn.pri:hover { background:#2563eb; border-color:#2563eb; }
+
+@media(max-width:480px){
+  .rbtn span { display:none; }
+  .rmode-btn { padding:4px 7px; }
+}
+
+/* Editor textarea (edit mode) */
+.editor-wrap {
+  flex:1; position:relative; min-height:0;
+  display:flex; flex-direction:column;
+}
+.edit-ta {
+  flex:1; width:100%; padding:14px 16px;
+  font-family:var(--mono); font-size:.76rem; line-height:1.75;
+  background:var(--surface2); color:var(--text);
+  border:none; outline:none; resize:none;
+  overflow-y:auto; tab-size:2;
+  transition: background .18s;
+  touch-action: manipulation;
+}
+.edit-ta::placeholder { color:var(--text-muted); }
+.edit-ta:focus { background:var(--surface); }
+
+/* Preview div (preview mode) */
+.preview-wrap {
+  flex:1; overflow:auto; padding:14px 16px;
+}
+.preview-code {
+  font-family:var(--mono); font-size:.76rem; line-height:1.75;
+  white-space:pre; word-break:break-all; min-height:100%;
+}
+/* Syntax */
+.c  { color:#6e7d9a; } /* comment */
+.k  { color:#4a80f0; } /* key */
+.vs { color:#10b981; } /* string val */
+.vn { color:#f59e0b; } /* number val */
+.vb { color:#e879f9; } /* bool val */
+.va { color:#94a3b8; } /* array val */
+.sec{ color:#a78bfa; font-weight:700; } /* [section] */
+.eq { color:var(--text-muted); }
+@media(prefers-color-scheme:dark){
+  .c { color:#4a5568; }
+}
+
+/* sync indicator */
+.sync-dot {
+  width:7px; height:7px; border-radius:50%;
+  background:var(--success); flex-shrink:0;
+  transition: background .3s;
+}
+.sync-dot.dirty { background:var(--warn); animation:pulse .6s infinite alternate; }
+
+/* ===== Toast ===== */
+.toasts {
+  position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+  z-index:9999; display:flex; flex-direction:column-reverse; gap:6px;
+  pointer-events:none;
+}
+.toast {
+  background:var(--text); color:var(--bg);
+  padding:9px 18px; border-radius:99px;
+  font-size:.78rem; font-weight:600;
+  box-shadow:0 4px 20px rgba(0,0,0,.2);
+  pointer-events:auto; white-space:nowrap;
+  animation:toastIn .22s var(--ease);
+}
+.toast.ok  { background:var(--success); color:#fff; }
+.toast.err { background:var(--danger);  color:#fff; }
+.toast.bye { animation:toastOut .22s var(--ease) forwards; }
+
+/* ===== Animations ===== */
+@keyframes slideIn  { from{opacity:0;transform:translateY(-5px)} to{opacity:1;transform:none} }
+@keyframes fadeIn   { from{opacity:0} to{opacity:1} }
+@keyframes toastIn  { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+@keyframes toastOut { from{opacity:1;transform:none} to{opacity:0;transform:translateY(12px)} }
+@keyframes pulse    { from{opacity:.5} to{opacity:1} }
+
+/* Scrollbar */
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:var(--text-muted)}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="hdr">
+  <div class="hdr-logo">
+  <!--  <svg viewBox="0 0 30 30" fill="none">
+      <rect width="30" height="30" rx="8" fill="url(#g1)"/>
+      <circle cx="15" cy="15" r="5.5" stroke="#fff" stroke-width="1.8"/>
+      <line x1="15" y1="4.5" x2="15" y2="9.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="15" y1="20.5" x2="15" y2="25.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="4.5" y1="15" x2="9.5" y2="15" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20.5" y1="15" x2="25.5" y2="15" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#4a80f0"/><stop offset="1" stop-color="#7c3aed"/>
+      </linearGradient></defs>
+    </svg> -->
+    VNTS2 配置文件在线生成器
+    <span class="ver-badge">v2.x</span>
+  </div>
+  <div class="hdr-sep"></div>
+  <div class="sync-dot" id="syncDot" title="同步状态"></div>
+  <span class="theme-dot" id="themeLbl">跟随系统</span>
+</header>
+
+<!-- ===== Main Layout ===== -->
+<div class="layout">
+
+  <!-- ============ LEFT: FORM ============ -->
+  <aside class="pane-left" id="paneLeft">
+
+    <!-- 🌐 网络监听 -->
+    <div class="card" id="cNet">
+      <div class="card-hdr" onclick="toggleCard('cNet')">
+        <span class="card-icon">🌐</span>
+        <span class="card-title">协议监听地址</span>
+        <span class="caret">▾</span>
+      </div>
+      <div class="card-body">
+        <div class="tip">💡 TCP / QUIC / WebSocket 三种协议至少启用一种，端口可相同（内部自动复用）</div>
+        <div class="field">
+          <label class="fl">TCP 监听地址 <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_tcp_bind" placeholder="0.0.0.0:29872" oninput="formToConfig()">
+          <span class="hint">TCP 服务绑定地址；留空不启用 TCP</span>
+        </div>
+        <div class="field">
+          <label class="fl">QUIC 监听地址 <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_quic_bind" placeholder="0.0.0.0:29872" oninput="formToConfig()">
+          <span class="hint">基于 UDP 的加密低延迟协议；留空不启用 QUIC（需 TLS）</span>
+        </div>
+        <div class="field">
+          <label class="fl">WebSocket 监听地址 <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_ws_bind" placeholder="0.0.0.0:29872" oninput="formToConfig()">
+          <span class="hint">可穿透 HTTP 代理；留空不启用 WebSocket（需 TLS）</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔗 虚拟网络 -->
+    <div class="card" id="cVnet">
+      <div class="card-hdr" onclick="toggleCard('cVnet')">
+        <span class="card-icon">🔗</span>
+        <span class="card-title">虚拟网络基础</span>
+        <span class="caret">▾</span>
+      </div>
+      <div class="card-body">
+        <div class="field">
+          <label class="fl">默认虚拟网段 <span class="req">*</span><span class="tag req-t">必填</span></label>
+          <input type="text" id="f_network" value="10.26.0.0/24" oninput="formToConfig()">
+          <span class="hint">CIDR 格式，如 10.26.0.0/24；网关为该网段首个可用 IP（10.26.0.1）</span>
+        </div>
+        <div class="field">
+          <label class="fl">
+            Token 白名单
+            <span class="nbadge" id="badge_wl">0</span>
+          </label>
+          <div class="mlist" id="ml_white_list"></div>
+          <button class="madd" onclick="addWl()">
+            <svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            添加 Token
+          </button>
+          <span class="hint">留空表示允许所有 Token 接入；填写后仅白名单内的 Token 可组网</span>
+        </div>
+        <div class="field">
+          <label class="fl">IP 租约时长（秒）</label>
+          <input type="number" id="f_lease_duration" value="86400" min="60" oninput="formToConfig()">
+          <span class="hint">客户端离线超过此时间将回收 IP；默认 86400（24 小时）</span>
+        </div>
+        <div class="field">
+          <div class="tog-row">
+            <div class="tog-info">
+              <div class="tit">数据持久化</div>
+              <div class="hint">开启后重启服务不丢失 IP 分配记录（推荐开启）</div>
+            </div>
+            <label class="sw">
+              <input type="checkbox" id="f_persistence" checked onchange="formToConfig()">
+              <span class="track"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🗺️ 自定义网段 -->
+    <div class="card" id="cCnets">
+      <div class="card-hdr" onclick="toggleCard('cCnets')">
+        <span class="card-icon">🗺️</span>
+        <span class="card-title">自定义网段映射</span>
+        <span class="caret">▾</span>
+      </div>
+      <div class="card-body">
+        <div class="tip">为不同 Token 分配独立虚拟网段；格式：名称 → CIDR</div>
+        <div class="mlist" id="ml_custom_nets"></div>
+        <button class="madd" onclick="addCnet()">
+          <svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          添加网段
+        </button>
+        <span class="hint">示例：net1 → 10.25.0.0/24，net2 → 10.27.0.0/24</span>
+      </div>
+    </div>
+
+    <!-- 🖥️ Web 管理 -->
+    <div class="card" id="cWeb">
+      <div class="card-hdr" onclick="toggleCard('cWeb')">
+        <span class="card-icon">🖥️</span>
+        <span class="card-title">Web 管理界面</span>
+        <span class="caret">▾</span>
+      </div>
+      <div class="card-body">
+        <div class="field">
+          <label class="fl">管理界面绑定地址 <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_web_bind" placeholder="0.0.0.0:29871" oninput="formToConfig()">
+          <span class="hint">留空则不启用 Web 管理界面；端口不可与 TCP/QUIC/WS 相同</span>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label class="fl">用户名</label>
+            <input type="text" id="f_username" value="admin" oninput="formToConfig()">
+          </div>
+          <div class="field">
+            <label class="fl">密码</label>
+            <input type="password" id="f_password" value="admin" oninput="formToConfig()">
+          </div>
+        </div>
+        <span class="hint" style="color:var(--warn)">⚠ 生产环境务必修改默认用户名密码！</span>
+      </div>
+    </div>
+
+    <!-- 🔒 TLS 证书 -->
+    <div class="card" id="cTls">
+      <div class="card-hdr" onclick="toggleCard('cTls')">
+        <span class="card-icon">🔒</span>
+        <span class="card-title">TLS 证书</span>
+        <span class="caret">▾</span>
+      </div>
+      <div class="card-body">
+        <div class="tip">💡 不填时自动生成自签名证书；QUIC / WebSocket 协议必须使用 TLS</div>
+        <div class="field">
+          <label class="fl">证书文件路径 (cert.pem) <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_cert" placeholder="cert.pem" oninput="formToConfig()">
+          <span class="hint">PEM 格式证书路径，支持相对路径（相对于程序工作目录）或绝对路径</span>
+        </div>
+        <div class="field">
+          <label class="fl">私钥文件路径 (key.pem) <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_key" placeholder="key.pem" oninput="formToConfig()">
+          <span class="hint">PEM 格式私钥路径，与 cert 成对使用</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔀 服务端互联 -->
+    <div class="card" id="cPeer">
+      <div class="card-hdr" onclick="toggleCard('cPeer')">
+        <span class="card-icon">🔀</span>
+        <span class="card-title">服务端互联（多节点集群）</span>
+        <span class="caret">▾</span>
+      </div>
+      <div class="card-body">
+        <div class="tip">💡 多台 VNTS2 服务器组成集群时使用，单节点部署无需填写此项</div>
+        <div class="field">
+          <label class="fl">互联 QUIC 端口 <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_server_quic_bind" placeholder="0.0.0.0:29873" oninput="formToConfig()">
+          <span class="hint">服务器之间通信的专用 QUIC 端口；留空不启用服务端互联</span>
+        </div>
+        <div class="field">
+          <label class="fl">
+            其他服务器地址
+            <span class="nbadge" id="badge_peer">0</span>
+          </label>
+          <div class="mlist" id="ml_peer_servers"></div>
+          <button class="madd" onclick="addPeer()">
+            <svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            添加节点
+          </button>
+          <span class="hint">格式：IP或域名:端口，如 server2.example.com:29873</span>
+        </div>
+        <div class="field">
+          <label class="fl">服务器验证码 <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_server_token" placeholder="your-cluster-secret" oninput="formToConfig()">
+          <span class="hint">集群各节点共享的身份验证密钥，所有节点必须保持一致</span>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ============ RIGHT: EDITOR ============ -->
+  <main class="pane-right">
+
+    <!-- Toolbar -->
+    <div class="rbar">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="color:var(--accent);flex-shrink:0">
+        <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M4 5h6M4 7.5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="rtitle">config.toml</span>
+      <!-- Mode switch -->
+      <div class="rmode">
+        <button class="rmode-btn active" id="btnPreview" onclick="setMode('preview')">预览</button>
+        <button class="rmode-btn" id="btnEdit" onclick="setMode('edit')">编辑</button>
+      </div>
+      <!-- Actions -->
+      <div class="ractions">
+        <button class="rbtn" onclick="doCopy()">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="3.5" y="3.5" width="7" height="7" rx="1.2" stroke="currentColor" stroke-width="1.3"/><path d="M8 3.5V2.5A1 1 0 0 0 7 1.5H2.5a1 1 0 0 0-1 1V7a1 1 0 0 0 1 1H3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span>复制</span>
+        </button>
+        <button class="rbtn pri" onclick="doDownload()">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1.5v6M4 5.5 6 7.5 8 5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 9.5h9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span>下载</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Preview mode -->
+    <div class="editor-wrap" id="modePreview">
+      <div class="preview-wrap">
+        <div class="preview-code" id="previewCode"></div>
+      </div>
+    </div>
+
+    <!-- Edit mode (textarea) -->
+    <div class="editor-wrap" id="modeEdit" style="display:none">
+      <textarea class="edit-ta" id="editTa"
+        placeholder="在此直接编辑 config.toml 内容，修改会实时同步到左侧表单…"
+        spellcheck="false"
+        oninput="configToForm()"
+      ></textarea>
+    </div>
+
+  </main>
+</div>
+
+<!-- Toast container -->
+<div class="toasts" id="toasts"></div>
+
+<script>
+'use strict';
+
+/* ===================================================================
+   STATE
+=================================================================== */
+let _mode = 'preview';   // 'preview' | 'edit'
+let _busy = false;       // re-entrancy guard
+
+/* ===================================================================
+   CARD COLLAPSE
+=================================================================== */
+function toggleCard(id) {
+  document.getElementById(id).classList.toggle('closed');
+}
+
+/* ===================================================================
+   MODE SWITCH
+=================================================================== */
+function setMode(m) {
+  _mode = m;
+  const isEdit = m === 'edit';
+  document.getElementById('modePreview').style.display = isEdit ? 'none' : 'flex';
+  document.getElementById('modeEdit').style.display    = isEdit ? 'flex' : 'none';
+  document.getElementById('btnPreview').classList.toggle('active', !isEdit);
+  document.getElementById('btnEdit').classList.toggle('active', isEdit);
+
+  if (isEdit) {
+    // Populate textarea with current raw config
+    document.getElementById('editTa').value = getRawConfig();
+    document.getElementById('editTa').focus();
+  } else {
+    // Re-render preview from current raw
+    renderPreview(getRawConfig());
+  }
+}
+
+function getRawConfig() {
+  // Always generate from form state as source-of-truth in preview mode
+  // In edit mode the textarea is source of truth
+  if (_mode === 'edit') {
+    return document.getElementById('editTa').value;
+  }
+  return buildConfig();
+}
+
+/* ===================================================================
+   MULTI-LIST HELPERS
+=================================================================== */
+function esc(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function addRow(listId, ph, val) {
+  const list = document.getElementById(listId);
+  const d = document.createElement('div');
+  d.className = 'mitem';
+  d.innerHTML =
+    `<input type="text" placeholder="${ph}" value="${esc(val||'')}" oninput="formToConfig()" ontouchstart="">` +
+    `<button class="ibtn del" onclick="delRow(this)" title="删除">` +
+    `<svg width="9" height="9" viewBox="0 0 9 9"><path d="M1 1l7 7M8 1 1 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>`;
+  list.appendChild(d);
+  updBadge(listId);
+  formToConfig();
+}
+
+function addNetRow(listId, n, c) {
+  const list = document.getElementById(listId);
+  const d = document.createElement('div');
+  d.className = 'mitem net2';
+  d.innerHTML =
+    `<input type="text" placeholder="名称 net1" value="${esc(n||'')}" oninput="formToConfig()" ontouchstart="">` +
+    `<input type="text" placeholder="10.25.0.0/24" value="${esc(c||'')}" oninput="formToConfig()" ontouchstart="">` +
+    `<button class="ibtn del" onclick="delRow(this)" title="删除">` +
+    `<svg width="9" height="9" viewBox="0 0 9 9"><path d="M1 1l7 7M8 1 1 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>`;
+  list.appendChild(d);
+  formToConfig();
+}
+
+function delRow(btn) {
+  const item = btn.closest('.mitem');
+  const listId = item.parentElement.id;
+  item.remove();
+  updBadge(listId);
+  formToConfig();
+}
+
+function updBadge(listId) {
+  const map = { ml_white_list: 'badge_wl', ml_peer_servers: 'badge_peer' };
+  const bid = map[listId];
+  if (bid) {
+    const cnt = document.getElementById(listId).children.length;
+    const el = document.getElementById(bid);
+    if (el) el.textContent = cnt;
+  }
+}
+
+function mvals(listId) {
+  return Array.from(document.querySelectorAll(`#${listId} .mitem:not(.net2) input`))
+    .map(i => i.value.trim()).filter(Boolean);
+}
+
+function cnets() {
+  const r = {};
+  document.querySelectorAll('#ml_custom_nets .mitem.net2').forEach(d => {
+    const ins = d.querySelectorAll('input');
+    const n = ins[0].value.trim(), c = ins[1].value.trim();
+    if (n && c) r[n] = c;
+  });
+  return r;
+}
+
+function addWl()   { addRow('ml_white_list',   'mytoken123',                ''); updBadge('ml_white_list'); }
+function addPeer() { addRow('ml_peer_servers', 'server2.example.com:29873', ''); updBadge('ml_peer_servers'); }
+function addCnet() { addNetRow('ml_custom_nets', '', ''); }
+
+/* ===================================================================
+   FORM → CONFIG  (left to right)
+=================================================================== */
+function formToConfig() {
+  if (_busy) return;
+  const raw = buildConfig();
+  renderPreview(raw);
+  if (_mode === 'edit') {
+    // keep cursor position
+    const ta = document.getElementById('editTa');
+    const sel = [ta.selectionStart, ta.selectionEnd];
+    ta.value = raw;
+    try { ta.setSelectionRange(sel[0], sel[1]); } catch(e){}
+  }
+  setSyncDot(false);
+}
+
+/* ===================================================================
+   CONFIG → FORM  (right to left, edit mode)
+=================================================================== */
+function configToForm() {
+  if (_busy) return;
+  const raw = document.getElementById('editTa').value;
+  renderPreview(raw);
+  _busy = true;
+  try {
+    fillForm(parseTOML(raw));
+  } catch(e) {
+    // partial parse – just update preview
+  } finally {
+    _busy = false;
+  }
+  setSyncDot(false);
+}
+
+function fillForm(p) {
+  const sv = (id, v) => { if (v !== undefined && v !== null) { const el = document.getElementById(id); if (el) el.value = v; } };
+  const sb = (id, v) => { if (v !== undefined) { const el = document.getElementById(id); if (el) el.checked = !!v; } };
+
+  sv('f_tcp_bind',          p.tcp_bind);
+  sv('f_quic_bind',         p.quic_bind);
+  sv('f_ws_bind',           p.ws_bind);
+  sv('f_network',           p.network);
+  sv('f_lease_duration',    p.lease_duration);
+  sb('f_persistence',       p.persistence !== undefined ? p.persistence : true);
+  sv('f_web_bind',          p.web_bind);
+  sv('f_username',          p.username);
+  sv('f_password',          p.password);
+  sv('f_cert',              p.cert);
+  sv('f_key',               p.key);
+  sv('f_server_quic_bind',  p.server_quic_bind);
+  sv('f_server_token',      p.server_token);
+
+  // white_list
+  document.getElementById('ml_white_list').innerHTML = '';
+  if (Array.isArray(p.white_list)) p.white_list.forEach(t => addRow('ml_white_list','mytoken123', t));
+  updBadge('ml_white_list');
+
+  // peer_servers
+  document.getElementById('ml_peer_servers').innerHTML = '';
+  if (Array.isArray(p.peer_servers)) p.peer_servers.forEach(s => addRow('ml_peer_servers','server:29873', s));
+  updBadge('ml_peer_servers');
+
+  // custom_nets
+  document.getElementById('ml_custom_nets').innerHTML = '';
+  if (p.custom_nets && typeof p.custom_nets === 'object') {
+    Object.entries(p.custom_nets).forEach(([n,c]) => addNetRow('ml_custom_nets', n, c));
+  }
+}
+
+/* ===================================================================
+   BUILD CONFIG STRING from form
+=================================================================== */
+function buildConfig() {
+  const g  = id => (document.getElementById(id)||{}).value?.trim() ?? '';
+  const gb = id => (document.getElementById(id)||{}).checked ?? false;
+  const wl = mvals('ml_white_list');
+  const ps = mvals('ml_peer_servers');
+  const cn = cnets();
+
+  const tcp   = g('f_tcp_bind');
+  const quic  = g('f_quic_bind');
+  const ws    = g('f_ws_bind');
+  const net   = g('f_network')  || '10.26.0.0/24';
+  const lease = parseInt(g('f_lease_duration')) || 86400;
+  const pers  = gb('f_persistence');
+  const web   = g('f_web_bind');
+  const user  = g('f_username') || 'admin';
+  const pass  = g('f_password') || 'admin';
+  const cert  = g('f_cert');
+  const key   = g('f_key');
+  const sqb   = g('f_server_quic_bind');
+  const stok  = g('f_server_token');
+
+  const L = [];
+  const ln = s => L.push(s);
+
+  ln('# ═══════════════════════════════════════════════════════');
+  ln('# VNTS2 Server 配置文件');
+  ln('# 项目地址：https://github.com/vnt-dev/vnts/tree/v2');
+  ln('# 由 VNTS2 配置生成器自动生成，支持双向编辑');
+  ln('# ═══════════════════════════════════════════════════════');
+  ln('');
+
+  // ── 协议监听 ──
+  ln('# ───────────────────────────────────────────────────────');
+  ln('# 协议监听地址（TCP / QUIC / WebSocket 至少启用一种）');
+  ln('# ───────────────────────────────────────────────────────');
+  ln('');
+  if (tcp) {
+    ln('# TCP 监听地址 — 稳定可靠，穿透性最佳');
+    ln(`tcp_bind = "${tcp}"`);
+  } else {
+    ln('# TCP 监听地址，留空不启用 TCP 服务');
+    ln('# tcp_bind = "0.0.0.0:29872"');
+  }
+  ln('');
+  if (quic) {
+    ln('# QUIC 监听地址 — 基于 UDP 的加密传输，低延迟，需配置 TLS 证书');
+    ln(`quic_bind = "${quic}"`);
+  } else {
+    ln('# QUIC 监听地址，留空不启用 QUIC（需 TLS 证书）');
+    ln('# quic_bind = "0.0.0.0:29872"');
+  }
+  ln('');
+  if (ws) {
+    ln('# WebSocket 监听地址 — 可穿透 HTTP/HTTPS 代理，需配置 TLS 证书');
+    ln(`ws_bind = "${ws}"`);
+  } else {
+    ln('# WebSocket 监听地址，留空不启用 WebSocket（需 TLS 证书）');
+    ln('# ws_bind = "0.0.0.0:29872"');
+  }
+  ln('');
+
+  // ── 虚拟网络 ──
+  ln('# ───────────────────────────────────────────────────────');
+  ln('# 虚拟网络基础配置');
+  ln('# ───────────────────────────────────────────────────────');
+  ln('');
+  ln('# 默认虚拟网段（CIDR 格式）');
+  ln('# 网关 IP 为该网段首个可用地址，如 10.26.0.0/24 的网关为 10.26.0.1');
+  ln(`network = "${net}"`);
+  ln('');
+  ln('# Token 白名单 — 留空 [] 允许所有 Token；填写后仅列表内的 Token 可接入');
+  if (wl.length) {
+    ln(`white_list = [${wl.map(t=>`"${t}"`).join(', ')}]`);
+  } else {
+    ln('white_list = []');
+  }
+  ln('');
+  ln('# IP 租约时长（秒）— 客户端离线超过此时间将回收并重新分配 IP');
+  ln('# 默认 86400 秒 = 24 小时；最小值 60 秒');
+  ln(`lease_duration = ${lease}`);
+  ln('');
+  ln('# 数据持久化 — true 开启后重启不会丢失 IP 分配记录（强烈推荐开启）');
+  ln(`persistence = ${pers}`);
+  ln('');
+
+  // ── Web 管理 ──
+  ln('# ───────────────────────────────────────────────────────');
+  ln('# Web 管理界面（可选）');
+  ln('# ───────────────────────────────────────────────────────');
+  ln('');
+  if (web) {
+    ln('# Web 管理端绑定地址，访问后可查看在线设备、分配情况等');
+    ln('# 注意：端口不可与 TCP / QUIC / WebSocket 端口相同');
+    ln(`web_bind = "${web}"`);
+  } else {
+    ln('# Web 管理绑定地址，留空不启用 Web 管理界面');
+    ln('# web_bind = "0.0.0.0:29871"');
+  }
+  ln('');
+  ln('# Web 管理界面登录用户名（默认 admin，生产环境务必修改）');
+  ln(`username = "${user}"`);
+  ln('');
+  ln('# Web 管理界面登录密码（默认 admin，⚠ 生产环境务必修改！）');
+  ln(`password = "${pass}"`);
+  ln('');
+
+  // ── TLS 证书 ──
+  ln('# ───────────────────────────────────────────────────────');
+  ln('# TLS 证书（QUIC 和 WebSocket 服务必需；不填自动生成自签名证书）');
+  ln('# ───────────────────────────────────────────────────────');
+  ln('');
+  if (cert) {
+    ln('# 自定义 TLS 证书路径（PEM 格式，支持相对或绝对路径）');
+    ln(`cert = "${cert}"`);
+  } else {
+    ln('# 自定义证书路径，不填则自动生成自签名证书');
+    ln('# cert = "cert.pem"');
+  }
+  ln('');
+  if (key) {
+    ln('# 自定义 TLS 私钥路径（PEM 格式，与 cert 成对使用）');
+    ln(`key = "${key}"`);
+  } else {
+    ln('# 自定义私钥路径，与 cert 成对使用');
+    ln('# key = "key.pem"');
+  }
+  ln('');
+
+  // ── 服务端互联 ──
+  ln('# ───────────────────────────────────────────────────────');
+  ln('# 服务端互联配置（单节点部署可全部注释）');
+  ln('# ───────────────────────────────────────────────────────');
+  ln('');
+  if (sqb) {
+    ln('# 服务端之间通信的专用 QUIC 端口（与客户端端口分开）');
+    ln(`server_quic_bind = "${sqb}"`);
+  } else {
+    ln('# 服务端互联 QUIC 端口，不填则不启用服务端互联');
+    ln('# server_quic_bind = "0.0.0.0:29873"');
+  }
+  ln('');
+  if (ps.length) {
+    ln('# 集群中其他 VNTS2 服务器的地址列表（格式：IP或域名:端口）');
+    ln(`peer_servers = [${ps.map(s=>`"${s}"`).join(', ')}]`);
+  } else {
+    ln('# 其他 VNTS2 服务器地址，格式：["host1:29873", "host2:29873"]');
+    ln('# peer_servers = ["server2.example.com:29873"]');
+  }
+  ln('');
+  if (stok) {
+    ln('# 集群各节点共享的身份验证密钥（所有节点必须保持一致）');
+    ln(`server_token = "${stok}"`);
+  } else {
+    ln('# 集群认证密钥，集群内所有节点需保持一致');
+    ln('# server_token = "your-cluster-secret"');
+  }
+  ln('');
+
+  // ── 自定义网段 ──
+  ln('# ───────────────────────────────────────────────────────');
+  ln('# 自定义虚拟网段映射（可为不同 Token 分配独立网段）');
+  ln('# 格式：名称 = "CIDR"，如 net1 = "10.25.0.0/24"');
+  ln('# ───────────────────────────────────────────────────────');
+  ln('[custom_nets]');
+  const cnkeys = Object.keys(cn);
+  if (cnkeys.length) {
+    cnkeys.forEach(n => ln(`${n} = "${cn[n]}"`));
+  } else {
+    ln('# net1 = "10.25.0.0/24"');
+    ln('# net2 = "10.27.1.0/24"');
+  }
+
+  return L.join('\n');
+}
+
+/* ===================================================================
+   SYNTAX HIGHLIGHT  (preview mode)
+=================================================================== */
+function renderPreview(text) {
+  const el = document.getElementById('previewCode');
+  const lines = text.split('\n');
+  let html = '';
+  for (const line of lines) {
+    if (line.startsWith('#')) {
+      html += `<span class="c">${esc(line)}</span>\n`;
+    } else if (/^\s*\[/.test(line)) {
+      html += `<span class="sec">${esc(line)}</span>\n`;
+    } else if (line.includes(' = ')) {
+      const ei = line.indexOf(' = ');
+      const k  = line.slice(0, ei);
+      const vs = line.slice(ei + 3);
+      let vc = 'vs';
+      if (vs === 'true' || vs === 'false') vc = 'vb';
+      else if (/^-?\d+(\.\d+)?$/.test(vs)) vc = 'vn';
+      else if (vs.startsWith('[')) vc = 'va';
+      html += `<span class="k">${esc(k)}</span><span class="eq"> = </span><span class="${vc}">${esc(vs)}</span>\n`;
+    } else {
+      html += esc(line) + '\n';
+    }
+  }
+  el.innerHTML = html;
+}
+
+/* ===================================================================
+   SIMPLE TOML PARSER
+=================================================================== */
+function parseTOML(src) {
+  const r = {};
+  let sec = null;
+  for (let raw of src.split('\n')) {
+    let line = raw.trim();
+    if (!line) continue;
+
+    // strip trailing comment (outside strings)
+    const ci = commentIdx(line);
+    if (ci > 0) line = line.slice(0, ci).trim();
+    if (!line || line === '#') continue;
+    // full-line comment
+    if (line.startsWith('#')) continue;
+
+    // section header
+    const sm = line.match(/^\[([^\]]+)\]$/);
+    if (sm) { sec = sm[1].trim(); if (!r[sec]) r[sec] = {}; continue; }
+
+    const ei = line.indexOf('=');
+    if (ei < 0) continue;
+    const key = line.slice(0, ei).trim();
+    const val = parseVal(line.slice(ei + 1).trim());
+    if (sec) r[sec][key] = val;
+    else r[key] = val;
+  }
+  return r;
+}
+
+function commentIdx(line) {
+  let inStr = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"' && line[i-1] !== '\\') inStr = !inStr;
+    if (!inStr && c === '#') return i;
+  }
+  return -1;
+}
+
+function parseVal(s) {
+  if (s === 'true')  return true;
+  if (s === 'false') return false;
+  if (/^-?\d+$/.test(s)) return parseInt(s, 10);
+  if (/^-?\d*\.\d+$/.test(s)) return parseFloat(s);
+  if ((s.startsWith('"') && s.endsWith('"')) ||
+      (s.startsWith("'") && s.endsWith("'"))) return s.slice(1, -1);
+  if (s.startsWith('[')) {
+    const inner = s.slice(1, s.lastIndexOf(']')).trim();
+    if (!inner) return [];
+    const items = [];
+    // Split by comma respecting quotes
+    let cur = '', inQ = false;
+    for (const ch of inner) {
+      if (ch === '"' || ch === "'") { inQ = !inQ; continue; }
+      if (ch === ',' && !inQ) { const t = cur.trim(); if (t) items.push(t); cur = ''; }
+      else cur += ch;
+    }
+    const t = cur.trim(); if (t) items.push(t);
+    return items;
+  }
+  return s;
+}
+
+/* ===================================================================
+   COPY / DOWNLOAD
+=================================================================== */
+async function doCopy() {
+  const txt = buildConfig();
+  try {
+    await navigator.clipboard.writeText(txt);
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+  toast('✅ 已复制到剪贴板', 'ok');
+}
+
+function doDownload() {
+  const txt = buildConfig();
+  const b = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+  const u = URL.createObjectURL(b);
+  const a = document.createElement('a');
+  a.href = u; a.download = 'config.toml';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(u);
+  toast('📥 config.toml 已下载', 'ok');
+}
+
+/* ===================================================================
+   SYNC DOT
+=================================================================== */
+function setSyncDot(dirty) {
+  document.getElementById('syncDot').classList.toggle('dirty', dirty);
+}
+
+/* ===================================================================
+   TOAST
+=================================================================== */
+function toast(msg, type) {
+  const c = document.getElementById('toasts');
+  const d = document.createElement('div');
+  d.className = 'toast' + (type ? ' ' + type : '');
+  d.textContent = msg;
+  c.appendChild(d);
+  setTimeout(() => {
+    d.classList.add('bye');
+    setTimeout(() => d.remove(), 250);
+  }, 2400);
+}
+
+/* ===================================================================
+   THEME HINT
+=================================================================== */
+function updateThemeHint() {
+  const dark = window.matchMedia('(prefers-color-scheme:dark)').matches;
+  const el = document.getElementById('themeLbl');
+  if (el) el.textContent = dark ? '🌙 深色模式' : '☀️ 浅色模式';
+}
+
+/* ===================================================================
+   INIT
+=================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  updateThemeHint();
+  window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change', updateThemeHint);
+  formToConfig(); // initial render
+});
+</script>
+</body>
+</html>
