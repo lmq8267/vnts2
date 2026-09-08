@@ -36,7 +36,7 @@
   --sh:            0 2px 10px rgba(0,0,0,0.07);
   --sh-lg:         0 6px 28px rgba(0,0,0,0.11);
   --hdr:           54px;
-  --left-w:        500px;
+  --left-w:        620px;
   --ease:          cubic-bezier(.4,0,.2,1);
 }
 
@@ -578,6 +578,113 @@ select {
       </div>
     </div>
 
+    <!-- IKEv2/IPsec 接入 -->
+    <div class="card" id="cIkev2">
+      <div class="card-hdr" onclick="toggleCard('cIkev2')">
+        <span class="card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5l4.5 1.8v3.2c0 2.8-1.9 4.7-4.5 5.5-2.6-.8-4.5-2.7-4.5-5.5V3.3L7 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7 10V7.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="7" cy="5.2" r="1.3" stroke="currentColor" stroke-width="1.2"/></svg></span>
+        <span class="card-title">IKEv2/IPsec 接入</span>
+        <span class="caret">▾</span>
+      </div>
+      <div class="card-body">
+        <div class="tip">为 iOS / macOS / Windows 原生 VPN 客户端提供 IPsec 接入；需 root 权限绑定 500/4500 UDP 端口</div>
+        <div class="field">
+          <div class="tog-row">
+            <div class="tog-info">
+              <div class="tit">启用 IKEv2 接入</div>
+              <div class="hint">启用后开放 IPsec 服务端（Web 管理界面中也可配置）</div>
+            </div>
+            <label class="sw">
+              <input type="checkbox" id="f_ikev2_enabled" onchange="formToConfig()">
+              <span class="track"></span>
+            </label>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label class="fl">IKE 监听地址</label>
+            <input type="text" id="f_ikev2_bind" placeholder="0.0.0.0:500" oninput="formToConfig()">
+          </div>
+          <div class="field">
+            <label class="fl">NAT-T 监听地址</label>
+            <input type="text" id="f_ikev2_natt_bind" placeholder="0.0.0.0:4500" oninput="formToConfig()">
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label class="fl">服务端地址</label>
+            <input type="text" id="f_ikev2_server_addr" placeholder="vpn.example.com" oninput="formToConfig()">
+            <span class="hint">客户端实际连接地址（IP 或域名）</span>
+          </div>
+          <div class="field">
+            <label class="fl">远程标识</label>
+            <input type="text" id="f_ikev2_remote_id" placeholder="vpn.example.com" oninput="formToConfig()">
+          </div>
+        </div>
+        <div class="field">
+          <label class="fl">证书 / 私钥 <span class="tag opt-t">可选</span></label>
+          <div class="row2">
+            <input type="text" id="f_ikev2_cert" placeholder="ikev2-cert.pem" oninput="formToConfig()">
+            <input type="text" id="f_ikev2_key" placeholder="ikev2-key.pem" oninput="formToConfig()">
+          </div>
+          <span class="hint">不填时自动生成受管 CA 与服务端证书</span>
+        </div>
+        <div class="field">
+          <label class="fl">DNS 服务器</label>
+          <div class="mlist" id="ml_ikev2_dns"></div>
+          <button class="madd" onclick="addDns()">
+            <svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            添加 DNS
+          </button>
+          <span class="hint">下发给客户端的 DNS 地址，如 223.5.5.5（阿里）/ 119.29.29.29（腾讯），可多条</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WireGuard 接入 -->
+    <div class="card" id="cWg">
+      <div class="card-hdr" onclick="toggleCard('cWg')">
+        <span class="card-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.4" stroke="currentColor" stroke-width="1.2"/><circle cx="3.5" cy="11" r="1.4" stroke="currentColor" stroke-width="1.2"/><circle cx="10.5" cy="11" r="1.4" stroke="currentColor" stroke-width="1.2"/><path d="M6 4.2 4.2 9.6M8 4.2l1.8 5.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+        <span class="card-title">WireGuard 接入</span>
+        <span class="caret">▾</span>
+      </div>
+      <div class="card-body">
+        <div class="tip">为 WireGuard 客户端提供接入，使用独立 UDP 监听端口（默认 51820）</div>
+        <div class="field">
+          <div class="tog-row">
+            <div class="tog-info">
+              <div class="tit">启用 WireGuard 接入</div>
+              <div class="hint">启用后开放 WireGuard 服务端（Web 管理界面中也可配置）</div>
+            </div>
+            <label class="sw">
+              <input type="checkbox" id="f_wg_enabled" onchange="formToConfig()">
+              <span class="track"></span>
+            </label>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label class="fl">监听地址</label>
+            <input type="text" id="f_wg_bind" placeholder="0.0.0.0:51820" oninput="formToConfig()">
+          </div>
+          <div class="field">
+            <label class="fl">端点</label>
+            <input type="text" id="f_wg_endpoint" placeholder="vpn.example.com:51820" oninput="formToConfig()">
+            <span class="hint">对外的 IP:端口，客户端用于连接</span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="fl">服务端私钥 <span class="tag opt-t">可选</span></label>
+          <input type="text" id="f_wg_private_key" placeholder="留空首次启用时自动生成" oninput="formToConfig()">
+          <span class="hint">base64 编码的 32 字节私钥；留空自动生成并回写配置文件</span>
+        </div>
+        <div class="field">
+          <label class="fl">持久化保活（秒）</label>
+          <input type="number" id="f_wg_keepalive" value="25" min="0" oninput="formToConfig()">
+          <span class="hint">客户端 NAT 保活间隔，默认 25 秒</span>
+        </div>
+      </div>
+    </div>
+
   </aside>
 
   <!-- ============ RIGHT: EDITOR ============ -->
@@ -747,6 +854,7 @@ function cnets() {
 function addWl()   { addRow('ml_white_list',   'mytoken123',                ''); updBadge('ml_white_list'); }
 function addPeer() { addRow('ml_peer_servers', 'server2.example.com:29873', ''); updBadge('ml_peer_servers'); }
 function addCnet() { addNetRow('ml_custom_nets', '', ''); }
+function addDns()  { addRow('ml_ikev2_dns',     '223.5.5.5',               ''); }
 
 /* ===================================================================
    FORM → CONFIG  (left to right)
@@ -800,6 +908,26 @@ function fillForm(p) {
   sv('f_key',               p.key);
   sv('f_server_quic_bind',  p.server_quic_bind);
   sv('f_server_token',      p.server_token);
+
+  // IKEv2 配置
+  const ikev2 = p.ikev2;
+  sb('f_ikev2_enabled',     ikev2 && ikev2.enabled);
+  sv('f_ikev2_bind',        ikev2 && ikev2.ike_bind);
+  sv('f_ikev2_natt_bind',   ikev2 && ikev2.natt_bind);
+  sv('f_ikev2_server_addr', ikev2 && ikev2.server_address);
+  sv('f_ikev2_remote_id',   ikev2 && ikev2.remote_id);
+  sv('f_ikev2_cert',        ikev2 && ikev2.cert);
+  sv('f_ikev2_key',         ikev2 && ikev2.key);
+  document.getElementById('ml_ikev2_dns').innerHTML = '';
+  if (ikev2 && Array.isArray(ikev2.dns)) ikev2.dns.forEach(t => addRow('ml_ikev2_dns', '223.5.5.5', t));
+
+  // WireGuard 配置
+  const wg = p.wireguard;
+  sb('f_wg_enabled',     wg && wg.enabled);
+  sv('f_wg_bind',        wg && wg.bind);
+  sv('f_wg_endpoint',    wg && wg.endpoint);
+  sv('f_wg_private_key', wg && wg.private_key);
+  sv('f_wg_keepalive',   wg && wg.persistent_keepalive);
 
   // white_list
   document.getElementById('ml_white_list').innerHTML = '';
@@ -976,6 +1104,72 @@ function buildConfig() {
   } else {
     ln('# 集群认证密钥，集群内所有节点需保持一致');
     ln('# server_token = "your-cluster-secret"');
+  }
+  ln('');
+
+  // ── IKEv2 接入 ──
+  ln('# ───────────────────────────────────────────────────────');
+  ln('# IKEv2/IPsec 接入（可选，需 root 权限绑定 500/4500 UDP）');
+  ln('# ───────────────────────────────────────────────────────');
+  ln('');
+  const ikv2_on   = gb('f_ikev2_enabled');
+  const ikv2_bind = g('f_ikev2_bind');
+  const ikv2_natt = g('f_ikev2_natt_bind');
+  const ikv2_addr = g('f_ikev2_server_addr');
+  const ikv2_rid  = g('f_ikev2_remote_id');
+  const ikv2_cert = g('f_ikev2_cert');
+  const ikv2_key  = g('f_ikev2_key');
+  const ikv2_dns  = mvals('ml_ikev2_dns');
+  if (ikv2_on || ikv2_bind || ikv2_natt || ikv2_addr || ikv2_rid || ikv2_cert || ikv2_key || ikv2_dns.length) {
+    ln('[ikev2]');
+    ln(`enabled = ${ikv2_on}`);
+    ln(`ike_bind = "${ikv2_bind || '0.0.0.0:500'}"`);
+    ln(`natt_bind = "${ikv2_natt || '0.0.0.0:4500'}"`);
+    if (ikv2_addr) {
+      ln('# 客户端实际连接地址（IP 或域名）');
+      ln(`server_address = "${ikv2_addr}"`);
+    }
+    if (ikv2_rid)  ln(`remote_id = "${ikv2_rid}"`);
+    if (ikv2_cert) ln(`cert = "${ikv2_cert}"`);
+    if (ikv2_key)  ln(`key = "${ikv2_key}"`);
+    if (ikv2_dns.length) ln(`dns = [${ikv2_dns.map(t=>`"${t}"`).join(', ')}]`);
+  } else {
+    ln('# [ikev2]');
+    ln('# enabled = true');
+    ln('# ike_bind = "0.0.0.0:500"');
+    ln('# natt_bind = "0.0.0.0:4500"');
+    ln('# server_address = "vpn.example.com"  # 客户端实际连接地址');
+    ln('# remote_id = "vpn.example.com"');
+    ln('# cert = "ikev2-cert.pem"');
+    ln('# key = "ikev2-key.pem"');
+    ln('# dns = []');
+  }
+  ln('');
+
+  // ── WireGuard 接入 ──
+  ln('# ───────────────────────────────────────────────────────');
+  ln('# WireGuard 接入（可选，独立 UDP 监听端口）');
+  ln('# ───────────────────────────────────────────────────────');
+  ln('');
+  const wg_on   = gb('f_wg_enabled');
+  const wg_bind = g('f_wg_bind');
+  const wg_ep   = g('f_wg_endpoint');
+  const wg_priv = g('f_wg_private_key');
+  const wg_ka   = parseInt(g('f_wg_keepalive')) || 0;
+  if (wg_on || wg_bind || wg_ep || wg_priv || wg_ka) {
+    ln('[wireguard]');
+    ln(`enabled = ${wg_on}`);
+    ln(`bind = "${wg_bind || '0.0.0.0:51820'}"`);
+    if (wg_ep)   ln(`endpoint = "${wg_ep}"`);
+    if (wg_priv) ln(`private_key = "${wg_priv}"`);
+    ln(`persistent_keepalive = ${wg_ka || 25}`);
+  } else {
+    ln('# [wireguard]');
+    ln('# enabled = true');
+    ln('# bind = "0.0.0.0:51820"');
+    ln('# endpoint = "vpn.example.com:51820"');
+    ln('# private_key = ""  # 留空首次启用自动生成');
+    ln('# persistent_keepalive = 25');
   }
   ln('');
 
