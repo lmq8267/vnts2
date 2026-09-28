@@ -89,9 +89,9 @@ persistence = true
 
 # tls证书不填时将自动生成
 # 自定义tls证书路径
-cert = "cert.pem"
+#cert = "cert.pem"
 # 自定义tls私钥路径
-key = "key.pem"
+#key = "key.pem"
 
 # 服务端互联配置（可选）
 # 服务端之间通信的UDP端口，不填则不启用服务端互联
